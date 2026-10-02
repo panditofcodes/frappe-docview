@@ -1,0 +1,1359 @@
+/* =========================================================
+
+   DOC VIEW - SALES INVOICE
+
+   =========================================================
+
+   This stylesheet only styles the central Doc View.
+
+   It does NOT modify:
+
+   - Frappe navbar
+
+   - Frappe left sidebar
+
+   - Frappe breadcrumb
+
+   - Frappe document sidebar
+
+   - Frappe form header
+
+   ========================================================= */
+
+/* =========================================================
+
+   MAIN CONTAINER
+
+   ========================================================= */
+
+.doc-view-inline {
+	width: 100%;
+
+	background: var(--bg-color);
+}
+
+.doc-view-inline .doc-view-wrapper {
+	width: 100%;
+
+	max-width: 1180px;
+
+	margin: 0 auto;
+
+	padding: 28px 32px 60px;
+
+	box-sizing: border-box;
+}
+
+/* =========================================================
+
+   HEADER
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-header {
+	display: flex;
+
+	align-items: flex-end;
+
+	justify-content: space-between;
+
+	gap: 24px;
+
+	margin-bottom: 24px;
+}
+
+.doc-view-inline .doc-view-header-left {
+	min-width: 0;
+}
+
+.doc-view-inline .doc-view-eyebrow {
+	margin-bottom: 6px;
+
+	color: var(--text-muted);
+
+	font-size: 11px;
+
+	font-weight: 600;
+
+	letter-spacing: 0.04em;
+
+	text-transform: uppercase;
+}
+
+.doc-view-inline .doc-view-title {
+	margin: 0;
+
+	color: var(--text-color);
+
+	font-size: 28px;
+
+	line-height: 1.15;
+
+	font-weight: 650;
+
+	letter-spacing: -0.025em;
+}
+
+.doc-view-inline .doc-view-header-actions {
+	display: flex;
+
+	align-items: center;
+
+	justify-content: flex-end;
+
+	gap: 8px;
+
+	flex-shrink: 0;
+}
+
+/* =========================================================
+
+   OPEN FULL FORM BUTTON
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-open-form-btn {
+	display: inline-flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	width: 34px;
+
+	height: 34px;
+
+	padding: 0;
+
+	border: 1px solid var(--border-color);
+
+	border-radius: 7px;
+
+	background: var(--card-bg, #fff);
+
+	color: var(--text-color);
+
+	cursor: pointer;
+
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.doc-view-inline .doc-view-open-form-btn:hover {
+	background: var(--bg-light-gray, #f7f7f7);
+
+	border-color: var(--dark-border-color, #d1d5db);
+}
+
+.doc-view-inline .doc-view-open-form-btn:focus {
+	outline: none;
+
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.doc-view-inline .doc-view-open-form-btn:active {
+	background: var(--bg-light-gray, #f1f1f1);
+}
+
+.doc-view-inline .doc-view-open-form-btn svg {
+	width: 16px;
+
+	height: 16px;
+}
+
+/* =========================================================
+
+   MAIN INFORMATION CARD
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-main-card {
+	overflow: hidden;
+
+	border: 1px solid var(--border-color);
+
+	border-radius: 10px;
+
+	background: var(--card-bg, #fff);
+}
+
+/* =========================================================
+
+   BILL TO / SHIP TO / COMPANY
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-parties {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+
+	overflow: hidden;
+
+	border-bottom: 1px solid var(--border-color);
+}
+
+.doc-view-inline .doc-view-party {
+	min-width: 0;
+
+	padding: 20px 22px 22px;
+
+	background: var(--card-bg, #fff);
+}
+
+.doc-view-inline .doc-view-party + .doc-view-party {
+	border-left: 1px solid var(--border-color);
+}
+
+/* =========================================================
+
+   PARTY LABEL
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-party-label {
+	margin-bottom: 11px;
+
+	color: var(--text-muted);
+
+	font-size: 10px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.06em;
+
+	text-transform: uppercase;
+}
+
+/* =========================================================
+
+   PARTY NAME
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-party-name {
+	margin-bottom: 6px;
+
+	color: var(--text-color);
+
+	font-size: 14px;
+
+	line-height: 1.4;
+
+	font-weight: 600;
+}
+
+/* =========================================================
+
+   PARTY EMAIL
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-party-email {
+	margin-bottom: 12px;
+
+	color: var(--text-muted);
+
+	font-size: 12px;
+
+	line-height: 1.45;
+
+	word-break: break-word;
+}
+
+/* =========================================================
+
+   PARTY ADDRESS
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-party-address {
+	color: var(--text-muted);
+
+	font-size: 12px;
+
+	line-height: 1.6;
+
+	overflow-wrap: anywhere;
+}
+
+.doc-view-inline .doc-view-party-address br {
+	display: block;
+
+	content: "";
+
+	margin-bottom: 1px;
+}
+
+/* =========================================================
+
+   EMPTY VALUE
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-empty-value {
+	color: var(--text-light);
+}
+
+/* =========================================================
+
+   DISPATCH FROM
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-dispatch {
+	display: flex;
+
+	align-items: center;
+
+	justify-content: space-between;
+
+	min-height: 74px;
+
+	padding: 15px 22px;
+
+	background: var(--subtle-fg, #f8f8f8);
+
+	border-bottom: 1px solid var(--border-color);
+
+	box-sizing: border-box;
+}
+
+.doc-view-inline .doc-view-dispatch-label {
+	margin-bottom: 5px;
+
+	color: var(--text-muted);
+
+	font-size: 10px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.06em;
+
+	text-transform: uppercase;
+}
+
+.doc-view-inline .doc-view-dispatch-value {
+	color: var(--text-color);
+
+	font-size: 13px;
+
+	line-height: 1.4;
+
+	font-weight: 600;
+}
+
+/* =========================================================
+
+   DOCUMENT META
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-meta {
+	display: grid;
+
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.doc-view-inline .doc-view-meta-item {
+	min-width: 0;
+
+	padding: 16px 22px 18px;
+}
+
+.doc-view-inline .doc-view-meta-label {
+	margin-bottom: 6px;
+
+	color: var(--text-muted);
+
+	font-size: 10px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.06em;
+
+	text-transform: uppercase;
+}
+
+.doc-view-inline .doc-view-meta-value {
+	color: var(--text-color);
+
+	font-size: 13px;
+
+	line-height: 1.4;
+
+	font-weight: 500;
+
+	overflow-wrap: anywhere;
+}
+
+/* =========================================================
+
+   GENERAL SECTION
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-section {
+	margin-top: 18px;
+
+	overflow: hidden;
+
+	border: 1px solid var(--border-color);
+
+	border-radius: 10px;
+
+	background: var(--card-bg, #fff);
+}
+
+/* =========================================================
+
+   SECTION HEADER
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-section-header {
+	display: flex;
+
+	align-items: center;
+
+	justify-content: space-between;
+
+	min-height: 52px;
+
+	padding: 0 22px;
+
+	border-bottom: 1px solid var(--border-color);
+}
+
+.doc-view-inline .doc-view-section-title {
+	color: var(--text-color);
+
+	font-size: 11px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.05em;
+
+	text-transform: uppercase;
+}
+
+.doc-view-inline .doc-view-section-count {
+	color: var(--text-muted);
+
+	font-size: 12px;
+}
+
+/* =========================================================
+
+   ITEMS TABLE WRAPPER
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items-wrapper {
+	width: 100%;
+
+	overflow-x: auto;
+}
+
+/* =========================================================
+
+   ITEMS TABLE
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items {
+	width: 100%;
+
+	border-collapse: collapse;
+
+	table-layout: fixed;
+}
+
+/* =========================================================
+
+   TABLE HEADER
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items thead th {
+	padding: 11px 22px;
+
+	border-bottom: 1px solid var(--border-color);
+
+	background: var(--card-bg, #fff);
+
+	color: var(--text-muted);
+
+	font-size: 10px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.05em;
+
+	text-transform: uppercase;
+
+	white-space: nowrap;
+}
+
+/* =========================================================
+
+   TABLE BODY
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items tbody td {
+	padding: 16px 22px;
+
+	color: var(--text-color);
+
+	font-size: 13px;
+
+	line-height: 1.45;
+
+	vertical-align: top;
+}
+
+.doc-view-inline .doc-view-items tbody tr + tr td {
+	border-top: 1px solid var(--border-color);
+}
+
+/* =========================================================
+
+   ITEM COLUMN
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items th:first-child,
+.doc-view-inline .doc-view-items td:first-child {
+	width: 58%;
+
+	text-align: left;
+}
+
+/* =========================================================
+
+   QTY COLUMN
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items th:nth-child(2),
+.doc-view-inline .doc-view-items td:nth-child(2) {
+	width: 10%;
+
+	text-align: right;
+}
+
+/* =========================================================
+
+   RATE COLUMN
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items th:nth-child(3),
+.doc-view-inline .doc-view-items td:nth-child(3) {
+	width: 16%;
+
+	text-align: right;
+}
+
+/* =========================================================
+
+   AMOUNT COLUMN
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-items th:nth-child(4),
+.doc-view-inline .doc-view-items td:nth-child(4) {
+	width: 16%;
+
+	text-align: right;
+}
+
+/* =========================================================
+
+   ITEM NAME
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-item-name {
+	color: var(--text-color);
+
+	font-size: 13px;
+
+	line-height: 1.45;
+
+	font-weight: 500;
+
+	overflow-wrap: anywhere;
+}
+
+/* =========================================================
+
+   ITEM CODE
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-item-code {
+	margin-top: 3px;
+
+	color: var(--text-muted);
+
+	font-size: 11px;
+
+	line-height: 1.35;
+}
+
+/* =========================================================
+
+   NUMBER CELLS
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-number {
+	text-align: right;
+
+	white-space: nowrap;
+}
+
+.doc-view-inline .doc-view-amount {
+	color: var(--text-color);
+
+	font-weight: 600;
+}
+
+/* =========================================================
+
+   TOTALS
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-totals {
+	display: flex;
+
+	justify-content: flex-end;
+
+	padding: 20px 22px 22px;
+
+	border-top: 1px solid var(--border-color);
+}
+
+.doc-view-inline .doc-view-total-table {
+	width: 310px;
+
+	max-width: 100%;
+}
+
+/* =========================================================
+
+   TOTAL ROW
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-total-row {
+	display: flex;
+
+	align-items: center;
+
+	justify-content: space-between;
+
+	min-height: 28px;
+
+	color: var(--text-muted);
+
+	font-size: 13px;
+}
+
+.doc-view-inline .doc-view-total-row + .doc-view-total-row {
+	margin-top: 4px;
+}
+
+/* =========================================================
+
+   TOTAL LABEL
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-total-label {
+	padding-right: 20px;
+}
+
+/* =========================================================
+
+   TOTAL VALUE
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-total-value {
+	color: var(--text-color);
+
+	font-weight: 500;
+
+	text-align: right;
+
+	white-space: nowrap;
+}
+
+/* =========================================================
+
+   GRAND TOTAL
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-total-grand {
+	margin-top: 10px;
+
+	padding-top: 12px;
+
+	border-top: 1px solid var(--border-color);
+
+	color: var(--text-color);
+
+	font-size: 15px;
+
+	font-weight: 700;
+}
+
+.doc-view-inline .doc-view-total-grand .doc-view-total-value {
+	font-size: 16px;
+
+	font-weight: 700;
+}
+
+/* =========================================================
+
+   ACTIONS
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-actions {
+	display: flex;
+
+	align-items: center;
+
+	justify-content: flex-end;
+
+	gap: 8px;
+
+	margin-top: 18px;
+}
+
+/* =========================================================
+
+   ACTION BUTTONS
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-action-btn {
+	display: inline-flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	gap: 6px;
+
+	height: 34px;
+
+	padding: 0 12px;
+
+	border: 1px solid var(--border-color);
+
+	border-radius: 7px;
+
+	background: var(--card-bg, #fff);
+
+	color: var(--text-color);
+
+	font-size: 12px;
+
+	font-weight: 500;
+
+	cursor: pointer;
+
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.doc-view-inline .doc-view-action-btn:hover {
+	background: var(--bg-light-gray, #f7f7f7);
+
+	border-color: var(--dark-border-color, #d1d5db);
+}
+
+.doc-view-inline .doc-view-action-btn:focus {
+	outline: none;
+
+	box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.doc-view-inline .doc-view-action-btn svg {
+	width: 14px;
+
+	height: 14px;
+}
+
+/* =========================================================
+
+   DOC VIEW - FULL FORM ICON
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-open-form-btn {
+	display: inline-flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	width: 28px;
+
+	height: 28px;
+
+	padding: 0;
+
+	border: 0;
+
+	border-radius: 6px;
+
+	background: transparent;
+
+	color: var(--text-muted);
+
+	cursor: pointer;
+
+	box-shadow: none;
+}
+
+.doc-view-inline .doc-view-open-form-btn:hover {
+	background: var(--bg-light-gray);
+
+	color: var(--text-color);
+}
+
+.doc-view-inline .doc-view-open-form-btn:focus {
+	outline: none;
+
+	box-shadow: none;
+}
+
+.doc-view-inline .doc-view-open-form-btn svg {
+	width: 16px;
+
+	height: 16px;
+}
+
+/* =========================================================
+
+   SALES TAXES AND CHARGES
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-tax-wrapper {
+	width: 100%;
+
+	overflow-x: auto;
+}
+
+.doc-view-inline .doc-view-tax-table {
+	width: 100%;
+
+	min-width: 820px;
+
+	border-collapse: collapse;
+
+	table-layout: fixed;
+}
+
+.doc-view-inline .doc-view-tax-table th,
+.doc-view-inline .doc-view-tax-table td {
+	box-sizing: border-box;
+
+	padding: 11px 16px;
+
+	border-bottom: 1px solid var(--border-color);
+
+	font-size: 12px;
+
+	line-height: 1.45;
+
+	vertical-align: middle;
+}
+
+.doc-view-inline .doc-view-tax-table th {
+	color: var(--text-muted);
+
+	font-size: 10px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.04em;
+
+	text-transform: uppercase;
+
+	white-space: nowrap;
+
+	text-align: left;
+}
+
+.doc-view-inline .doc-view-tax-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+/* Exact six-column widths */
+
+.doc-view-inline .doc-view-tax-table .tax-col-type {
+	width: 17%;
+}
+
+.doc-view-inline .doc-view-tax-table .tax-col-account {
+	width: 29%;
+}
+
+.doc-view-inline .doc-view-tax-table .tax-col-rate {
+	width: 10%;
+}
+
+.doc-view-inline .doc-view-tax-table .tax-col-net {
+	width: 15%;
+}
+
+.doc-view-inline .doc-view-tax-table .tax-col-amount {
+	width: 14.5%;
+}
+
+.doc-view-inline .doc-view-tax-table .tax-col-total {
+	width: 14.5%;
+}
+
+/* Tax text */
+
+.doc-view-inline .doc-view-tax-type,
+.doc-view-inline .doc-view-tax-account {
+	text-align: left;
+
+	white-space: normal;
+
+	overflow-wrap: anywhere;
+}
+
+/* Tax numbers */
+
+.doc-view-inline .doc-view-tax-rate,
+.doc-view-inline .doc-view-tax-money {
+	text-align: right !important;
+
+	white-space: nowrap;
+
+	font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+
+   GST BREAKUP + TOTALS
+
+   ========================================================= */
+
+.doc-view-inline .doc-view-summary-grid {
+	display: grid;
+
+	grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr);
+
+	gap: 18px;
+
+	margin-top: 18px;
+
+	align-items: stretch;
+}
+
+.doc-view-inline .doc-view-summary-card {
+	min-width: 0;
+
+	overflow: hidden;
+
+	border: 1px solid var(--border-color);
+
+	border-radius: 10px;
+
+	background: var(--card-bg, #fff);
+}
+
+.doc-view-inline .doc-view-summary-header {
+	min-height: 48px;
+
+	display: flex;
+
+	align-items: center;
+
+	padding: 0 20px;
+
+	border-bottom: 1px solid var(--border-color);
+
+	color: var(--text-color);
+
+	font-size: 11px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.05em;
+
+	text-transform: uppercase;
+}
+
+.doc-view-inline .doc-view-gst-content {
+	padding: 0;
+}
+
+.doc-view-inline .doc-view-gst-table-wrapper {
+	width: 100%;
+
+	overflow-x: auto;
+}
+
+.doc-view-inline .doc-view-gst-table {
+	width: 100%;
+
+	min-width: 620px;
+
+	border-collapse: collapse;
+
+	table-layout: fixed;
+}
+
+.doc-view-inline .doc-view-gst-table th,
+.doc-view-inline .doc-view-gst-table td {
+	box-sizing: border-box;
+
+	padding: 11px 16px;
+
+	border-bottom: 1px solid var(--border-color);
+
+	font-size: 12px;
+
+	line-height: 1.45;
+
+	vertical-align: middle;
+}
+
+.doc-view-inline .doc-view-gst-table th {
+	color: var(--text-muted);
+
+	font-size: 10px;
+
+	font-weight: 700;
+
+	letter-spacing: 0.04em;
+
+	text-transform: uppercase;
+
+	white-space: nowrap;
+}
+
+.doc-view-inline .doc-view-gst-table th,
+.doc-view-inline .doc-view-gst-table td {
+	text-align: left;
+}
+
+.doc-view-inline .doc-view-gst-table .gst-col-hsn {
+	width: 24%;
+}
+
+.doc-view-inline .doc-view-gst-table .gst-col-taxable_amount {
+	width: 26%;
+}
+
+.doc-view-inline .doc-view-gst-table .gst-col-cgst,
+.doc-view-inline .doc-view-gst-table .gst-col-sgst,
+.doc-view-inline .doc-view-gst-table .gst-col-igst {
+	width: 16.666%;
+}
+
+.doc-view-inline .doc-view-gst-table th:nth-child(n + 2),
+.doc-view-inline .doc-view-gst-table td:nth-child(n + 2) {
+	text-align: right;
+}
+
+.doc-view-inline .doc-view-gst-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.doc-view-inline .doc-view-gst-text {
+	white-space: nowrap;
+
+	overflow-wrap: anywhere;
+}
+
+.doc-view-inline .doc-view-gst-money {
+	white-space: nowrap;
+
+	font-variant-numeric: tabular-nums;
+}
+
+.doc-view-inline .doc-view-gst-rate {
+	margin-right: 8px;
+
+	color: var(--text-muted);
+
+	white-space: nowrap;
+}
+
+.doc-view-inline .doc-view-gst-amount {
+	color: var(--text-color);
+
+	font-weight: 500;
+
+	white-space: nowrap;
+}
+
+.doc-view-inline .doc-view-gst-empty {
+	padding: 18px 20px;
+
+	color: var(--text-muted);
+
+	font-size: 13px;
+}
+
+/* Totals card */
+
+.doc-view-inline .doc-view-summary-card.doc-view-totals {
+	margin-top: 0;
+
+	padding: 0;
+}
+
+.doc-view-inline .doc-view-summary-card .doc-view-total-table {
+	width: auto;
+
+	max-width: none;
+
+	padding: 14px 20px 18px;
+}
+
+.doc-view-inline .doc-view-summary-card .doc-view-total-row {
+	min-height: 32px;
+}
+
+.doc-view-inline .doc-view-summary-card .doc-view-total-grand {
+	margin-top: 8px;
+}
+
+/* =========================================================
+
+   GST BREAKUP + TOTALS - RESPONSIVE
+
+   ========================================================= */
+
+@media (max-width: 800px) {
+	.doc-view-inline .doc-view-summary-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* =========================================================
+
+   RESPONSIVE - TABLET
+
+   ========================================================= */
+
+@media (max-width: 1000px) {
+	.doc-view-inline .doc-view-wrapper {
+		padding: 24px 20px 50px;
+	}
+
+	.doc-view-inline .doc-view-parties {
+		grid-template-columns: 1fr;
+	}
+
+	.doc-view-inline .doc-view-party + .doc-view-party {
+		border-left: 0;
+
+		border-top: 1px solid var(--border-color);
+	}
+}
+
+/* =========================================================
+
+   RESPONSIVE - SMALL TABLET
+
+   ========================================================= */
+
+@media (max-width: 800px) {
+	.doc-view-inline .doc-view-header {
+		align-items: flex-start;
+
+		flex-direction: column;
+	}
+
+	.doc-view-inline .doc-view-header-actions {
+		width: 100%;
+
+		justify-content: flex-start;
+	}
+
+	.doc-view-inline .doc-view-meta {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.doc-view-inline .doc-view-items {
+		min-width: 700px;
+	}
+
+	.doc-view-inline .doc-view-section {
+		overflow: hidden;
+	}
+
+	.doc-view-inline .doc-view-section-header {
+		min-width: 0;
+	}
+
+	.doc-view-inline .doc-view-tax-wrapper {
+		overflow-x: auto;
+	}
+}
+
+/* =========================================================
+
+   RESPONSIVE - MOBILE
+
+   ========================================================= */
+
+@media (max-width: 520px) {
+	.doc-view-inline .doc-view-wrapper {
+		padding: 18px 12px 40px;
+	}
+
+	.doc-view-inline .doc-view-title {
+		font-size: 24px;
+	}
+
+	.doc-view-inline .doc-view-meta {
+		grid-template-columns: 1fr;
+	}
+
+	.doc-view-inline .doc-view-party {
+		padding: 18px;
+	}
+
+	.doc-view-inline .doc-view-dispatch {
+		padding: 15px 18px;
+	}
+
+	.doc-view-inline .doc-view-meta-item {
+		padding: 14px 18px;
+	}
+
+	.doc-view-inline .doc-view-items thead th,
+	.doc-view-inline .doc-view-items tbody td {
+		padding-left: 16px;
+
+		padding-right: 16px;
+	}
+
+	.doc-view-inline .doc-view-totals {
+		padding-left: 18px;
+
+		padding-right: 18px;
+	}
+
+	.doc-view-inline .doc-view-actions {
+		justify-content: flex-start;
+
+		flex-wrap: wrap;
+	}
+}
+
+/* =========================================================
+   ACCOUNTING TABLE ALIGNMENT
+   ========================================================= */
+
+.doc-view-inline .doc-view-tax-table thead th:nth-child(1),
+.doc-view-inline .doc-view-tax-table thead th:nth-child(2) {
+	text-align: left;
+}
+
+.doc-view-inline .doc-view-tax-table thead th:nth-child(n + 3) {
+	text-align: right;
+}
+
+.doc-view-inline .doc-view-tax-table tbody td:nth-child(1),
+.doc-view-inline .doc-view-tax-table tbody td:nth-child(2) {
+	text-align: left;
+}
+
+.doc-view-inline .doc-view-tax-table tbody td:nth-child(n + 3) {
+	text-align: right;
+}
+
+/* =========================================================
+   GST BREAKUP + SUMMARY
+   ========================================================= */
+
+.doc-view-inline .doc-view-summary-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr);
+	gap: 18px;
+	margin-top: 18px;
+	align-items: stretch;
+}
+
+.doc-view-inline .doc-view-summary-card {
+	min-width: 0;
+	overflow: hidden;
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	background: var(--card-bg, #fff);
+}
+
+.doc-view-inline .doc-view-summary-header {
+	min-height: 48px;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	border-bottom: 1px solid var(--border-color);
+	color: var(--text-color);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.doc-view-inline .doc-view-gst-content {
+	padding: 18px 20px;
+}
+
+.doc-view-inline .doc-view-gst-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 32px;
+	color: var(--text-muted);
+	font-size: 13px;
+}
+
+.doc-view-inline .doc-view-gst-row span:last-child {
+	color: var(--text-color);
+	font-weight: 600;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.doc-view-inline .doc-view-summary-totals {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 20px 22px 22px;
+}
+
+.doc-view-inline .doc-view-summary-totals .doc-view-total-table {
+	width: 310px;
+	max-width: 100%;
+}
+
+@media (max-width: 800px) {
+	.doc-view-inline .doc-view-summary-grid {
+		grid-template-columns: 1fr;
+	}
+}

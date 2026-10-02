@@ -1,0 +1,139 @@
+<div class="doc-view-wrapper">
+	<div class="doc-view-header">
+		<div class="doc-view-header-left">
+			<div class="doc-view-eyebrow">Sales Invoice</div>
+			<h1 class="doc-view-title">{{DOC_NAME}}</h1>
+		</div>
+
+		<div class="doc-view-header-actions">
+			<button
+				type="button"
+				class="doc-view-open-form-btn"
+				title="Open Full Form"
+				aria-label="Open Full Form"
+			>
+				{{FULL_FORM_ICON}}
+			</button>
+		</div>
+	</div>
+
+	<div class="doc-view-main-card">
+		<div class="doc-view-parties">
+			<div class="doc-view-party">
+				<div class="doc-view-party-label">Bill To</div>
+				<div class="doc-view-party-name">{{BILL_TO_NAME}}</div>
+				{{BILL_TO_EMAIL}}
+				<div class="doc-view-party-address">{{BILL_TO_ADDRESS}}</div>
+			</div>
+
+			<div class="doc-view-party">
+				<div class="doc-view-party-label">Ship To</div>
+				<div class="doc-view-party-name">{{SHIP_TO_NAME}}</div>
+				{{SHIP_TO_EMAIL}}
+				<div class="doc-view-party-address">{{SHIP_TO_ADDRESS}}</div>
+			</div>
+
+			<div class="doc-view-party">
+				<div class="doc-view-party-label">Company</div>
+				<div class="doc-view-party-name">{{COMPANY}}</div>
+				<div class="doc-view-party-address">{{COMPANY_ADDRESS}}</div>
+			</div>
+		</div>
+
+		<div class="doc-view-dispatch">
+			<div>
+				<div class="doc-view-dispatch-label">Dispatch From</div>
+				<div class="doc-view-dispatch-value">{{DISPATCH_FROM}}</div>
+			</div>
+		</div>
+
+		<div class="doc-view-meta">
+			<div class="doc-view-meta-item">
+				<div class="doc-view-meta-label">Invoice Date</div>
+				<div class="doc-view-meta-value">{{INVOICE_DATE}}</div>
+			</div>
+
+			<div class="doc-view-meta-item">
+				<div class="doc-view-meta-label">Due Date</div>
+				<div class="doc-view-meta-value">{{DUE_DATE}}</div>
+			</div>
+
+			<div class="doc-view-meta-item">
+				<div class="doc-view-meta-label">Currency</div>
+				<div class="doc-view-meta-value">{{CURRENCY}}</div>
+			</div>
+
+			<div class="doc-view-meta-item">
+				<div class="doc-view-meta-label">Payment Terms</div>
+				<div class="doc-view-meta-value">{{PAYMENT_TERMS}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="doc-view-section">
+		<div class="doc-view-section-header">
+			<div class="doc-view-section-title">Items</div>
+			<div class="doc-view-section-count">{{ITEM_COUNT}} items</div>
+		</div>
+
+		<div class="doc-view-items-wrapper">
+			<table class="doc-view-items">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Qty</th>
+						<th>Rate</th>
+						<th>Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{ITEMS}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	{{SALES_TAXES}}
+
+	<div class="doc-view-summary-grid">
+		<div class="doc-view-summary-card doc-view-gst-breakup">
+			<div class="doc-view-summary-header">GST Breakup</div>
+			{{GST_BREAKUP}}
+		</div>
+
+		<div class="doc-view-summary-card doc-view-summary-totals">
+			<div class="doc-view-total-table">
+				<div class="doc-view-total-row">
+					<span class="doc-view-total-label">Net Total</span>
+					<span class="doc-view-total-value">{{NET_TOTAL}}</span>
+				</div>
+
+				<div class="doc-view-total-row">
+					<span class="doc-view-total-label">Tax</span>
+					<span class="doc-view-total-value">{{TAX_TOTAL}}</span>
+				</div>
+
+				<div class="doc-view-total-row doc-view-total-grand">
+					<span class="doc-view-total-label">Grand Total</span>
+					<span class="doc-view-total-value">{{GRAND_TOTAL}}</span>
+				</div>
+
+				{{OUTSTANDING_ROW}}
+			</div>
+		</div>
+	</div>
+
+	<div class="doc-view-actions">
+		<button type="button" class="doc-view-action-btn" data-docview-action="email">
+			{{EMAIL_ICON}} Email
+		</button>
+
+		<button type="button" class="doc-view-action-btn" data-docview-action="pdf">
+			{{DOWNLOAD_ICON}} Download PDF
+		</button>
+
+		<button type="button" class="doc-view-action-btn" data-docview-action="share">
+			{{SHARE_ICON}} Share
+		</button>
+	</div>
+</div>
