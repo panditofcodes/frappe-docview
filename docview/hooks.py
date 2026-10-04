@@ -8,6 +8,13 @@ app_license = "mit"
 # Apps
 # ------------------
 
+fixtures = [
+    {
+        "dt": "Docview Settings",
+        "filters": [["is_system_generated", "=", 1]],
+    }
+]
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
@@ -28,7 +35,10 @@ app_license = "mit"
 app_include_css = [
     "/assets/docview/css/docview.css",
 ]
-# app_include_js = "/assets/docview/js/docview.js"
+app_include_js = [
+    "/assets/docview/js/docview.js",
+    "/assets/docview/js/docview_list.js",
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/docview/css/docview.css"
@@ -45,10 +55,10 @@ app_include_css = [
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Sales Invoice": "public/js/sales_invoice.js"}
-doctype_list_js = {
-    "Sales Invoice": "public/js/sales_invoice_list.js",
-}
+# doctype_js = {"Sales Invoice": "public/js/sales_invoice.js"}
+# doctype_list_js = {
+#     "Sales Invoice": "public/js/sales_invoice_list.js",
+# }
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
